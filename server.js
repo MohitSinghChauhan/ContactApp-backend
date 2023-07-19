@@ -3,9 +3,7 @@ const app = express();
 
 const PORT = 5000;
 
-app.get('/', (req, res) => {
-	res.status(200).json({"msg":"working fine"});
-});
+app.use("/api/contacts", require('./routes/contactRoutes'))
 
 app.listen(PORT, () => {
 	console.log('Server running on port ' + PORT);
